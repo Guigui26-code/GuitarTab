@@ -17,3 +17,4 @@ console.log("APP OK");
 
 initTabs();
 initEditor();
+console.log("APP CHARGÉ");
