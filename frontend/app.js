@@ -1,8 +1,3 @@
-console.log("APP CHARGÉ");
+console.log("🔥 APP CHARGÉ DIRECT");
 
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM OK");
-
-  const btn = document.getElementById("new-btn");
-  console.log("new-btn =", btn);
-});
+alert("JS OK");
