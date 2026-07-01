@@ -1,3 +1,4 @@
+console.log("TABS OK");
 const STORAGE_KEY = 'guitartab-v1';
 
 let tabs = [];
