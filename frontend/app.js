@@ -5,6 +5,17 @@ import { supabase } from "./supabase.js";
 console.log("🔥 APP CHARGÉ");
 console.log("🟢 Supabase chargé :", supabase);
 
+supabase
+  .from("tabs")
+  .select("id")
+  .limit(1)
+  .then(({ data, error }) => {
+    if (error) {
+      console.error("🔴 Erreur Supabase :", error);
+    } else {
+      console.log("🟢 Connexion à la table tabs réussie :", data);
+    }
+  });
 document.addEventListener("DOMContentLoaded", () => {
   initTabs();
   initEditor();
