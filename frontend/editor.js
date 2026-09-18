@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'guitartab-v1';
+onst STORAGE_KEY = 'guitartab-v1';
 const CHORDS_KEY = 'guitartab-chords-v1';
 
 const TEMPLATE = `e|--------------------------------|
