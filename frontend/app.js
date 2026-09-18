@@ -1,3 +1,11 @@
-console.log("🔥 APP CHARGÉ DIRECT");
+import { initTabs } from "./tabs.js";
+import { initEditor } from "./editor.js";
 
-alert("JS OK");
+console.log("🔥 APP CHARGÉ");
+
+document.addEventListener("DOMContentLoaded", () => {
+  initTabs();
+  initEditor();
+
+  console.log("🎸 GuitarTab initialisé !");
+});
