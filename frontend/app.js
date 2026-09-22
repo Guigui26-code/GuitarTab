@@ -16,15 +16,52 @@ supabase
       console.log("🟢 Connexion à la table tabs réussie :", data);
     }
   });
-const loginBtn = document.getElementById("login-btn");
-
-if (loginBtn) {
-  loginBtn.addEventListener("click", () => {
-    alert("🔐 Connexion / Inscription");
-  });
-}
-
 document.addEventListener("DOMContentLoaded", () => {
+  const loginBtn = document.getElementById("login-btn");
+  const modal = document.getElementById("auth-modal");
+  const closeBtn = document.getElementById("auth-close");
+  const login = document.getElementById("auth-login");
+  const signup = document.getElementById("auth-signup");
+  const email = document.getElementById("auth-email");
+  const password = document.getElementById("auth-password");
+  const message = document.getElementById("auth-message");
+
+  loginBtn?.addEventListener("click", () => {
+    modal.style.display = "flex";
+  });
+
+  closeBtn?.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  login?.addEventListener("click", async () => {
+    const { error } = await supabase.auth.signInWithPassword({
+      email: email.value,
+      password: password.value
+    });
+
+    message.textContent = error
+      ? "❌ " + error.message
+      : "✅ Connexion réussie !";
+
+    if (!error) {
+      setTimeout(() => {
+        modal.style.display = "none";
+      }, 1000);
+    }
+  });
+
+  signup?.addEventListener("click", async () => {
+    const { error } = await supabase.auth.signUp({
+      email: email.value,
+      password: password.value
+    });
+
+    message.textContent = error
+      ? "❌ " + error.message
+      : "📧 Compte créé ! Vérifie ton e-mail.";
+  });
+
   initTabs();
   initEditor();
 
