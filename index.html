@@ -259,6 +259,23 @@
     h=hammer-on · p=pull-off · b=bend · /=slide↑ · \=slide↓ · x=mute · ~=vibrato · T=tap
   </div>
 </div>
+  <div id="auth-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9999;align-items:center;justify-content:center;">
+  <div style="background:#111;border:1px solid #ff6a00;border-radius:12px;padding:24px;width:320px;">
+    <h2 id="auth-title">Connexion</h2>
+
+    <input id="auth-email" type="email" placeholder="E-mail"
+      style="width:100%;box-sizing:border-box;margin:8px 0;padding:10px;">
+
+    <input id="auth-password" type="password" placeholder="Mot de passe"
+      style="width:100%;box-sizing:border-box;margin:8px 0;padding:10px;">
+
+    <button class="btn-primary" id="auth-login">Se connecter</button>
+    <button class="btn-ghost" id="auth-signup">Créer un compte</button>
+    <button class="btn-ghost" id="auth-close">Fermer</button>
+
+    <p id="auth-message"></p>
+  </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script type="module" src="./frontend/app.js"></script>
 <script>
