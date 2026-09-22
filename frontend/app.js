@@ -16,6 +16,14 @@ supabase
       console.log("🟢 Connexion à la table tabs réussie :", data);
     }
   });
+const loginBtn = document.getElementById("login-btn");
+
+if (loginBtn) {
+  loginBtn.addEventListener("click", () => {
+    alert("🔐 Connexion / Inscription");
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initTabs();
   initEditor();
