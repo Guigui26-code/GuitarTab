@@ -60,11 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     const { error } = await supabase.auth.signUp({
-      email: email.value,
-      password: password.value,
-      options: {}
-    });
-
+  email: email.value,
+  password: password.value,
+  options: {
+    emailRedirectTo: "https://guigui26-code.github.io/GuitarTab/"
+  }
+});
+    
     message.textContent = error
       ? "❌ " + error.message
       : "📧 Compte créé ! Vérifie ton e-mail.";
