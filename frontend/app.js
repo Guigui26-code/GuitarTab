@@ -16,6 +16,7 @@ supabase
       console.log("🟢 Connexion à la table tabs réussie :", data);
     }
   });
+
 document.addEventListener("DOMContentLoaded", () => {
   const loginBtn = document.getElementById("login-btn");
   const modal = document.getElementById("auth-modal");
@@ -52,13 +53,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   signup?.addEventListener("click", async () => {
-   const { error } = await supabase.auth.signUp({
-  email: email.value,
-  password: password.value,
-  options: {
-    emailRedirectTo: "https://guigui26-code.github.io/GuitarTab/"
-  }
-});
+
+    console.log(
+      "🔗 REDIRECTION DEMANDÉE :",
+      "https://guigui26-code.github.io/GuitarTab/"
+    );
+
+    const { error } = await supabase.auth.signUp({
+      email: email.value,
+      password: password.value,
+      options: {
+        emailRedirectTo: "https://guigui26-code.github.io/GuitarTab/"
+      }
+    });
 
     message.textContent = error
       ? "❌ " + error.message
