@@ -62,9 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const { error } = await supabase.auth.signUp({
       email: email.value,
       password: password.value,
-      options: {
-        emailRedirectTo: "https://guigui26-code.github.io/GuitarTab/"
-      }
+      options: {}
     });
 
     message.textContent = error
